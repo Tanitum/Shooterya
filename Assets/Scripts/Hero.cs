@@ -1,21 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Hero : MonoBehaviour
 {
     [SerializeField] private float speed = 3f;//скорость движения
-    [SerializeField] private int health = 5;//кол-во здоровья
+    [SerializeField] private float health = 5;//кол-во здоровья
     [SerializeField] private float jumpForce = 15f;//сила прыжка
 	[SerializeField] private AudioSource jumpSound;//звук прыжка
 	[SerializeField] private AudioSource damageSound;//звук урона
+	public Image bar;//полоска здоровья
     private bool isGrounded = false;
 
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     private Animator anim;
+	private float start_health;
 	
 	public static Hero Instance {get; set;}
+	
+	private void Start()
+    {
+		start_health = health;
+    }
 
     private States State
     {
@@ -48,7 +56,6 @@ public class Hero : MonoBehaviour
     private void Run()
     {
         if (isGrounded) State = States.run;
-
         Vector3 dir = transform.right * Input.GetAxis("Horizontal");
         transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
         sprite.flipX = dir.x < 0.0f;
@@ -72,6 +79,7 @@ public class Hero : MonoBehaviour
 	{
 		health -= 1;
 		damageSound.Play();
+		bar.fillAmount = health / start_health;
 		if (health <= 0){
 			Destroy(this.gameObject);
 		}
