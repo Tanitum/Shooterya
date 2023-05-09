@@ -7,6 +7,8 @@ public class Hero : MonoBehaviour
     [SerializeField] private float speed = 3f;//скорость движения
     [SerializeField] private int health = 5;//кол-во здоровья
     [SerializeField] private float jumpForce = 15f;//сила прыжка
+	[SerializeField] private AudioSource jumpSound;//звук прыжка
+	[SerializeField] private AudioSource damageSound;//звук урона
     private bool isGrounded = false;
 
     private Rigidbody2D rb;
@@ -55,6 +57,7 @@ public class Hero : MonoBehaviour
     private void Jump()
     {
         rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+		jumpSound.Play();
     }
 
     private void CheckGround()
@@ -68,6 +71,7 @@ public class Hero : MonoBehaviour
 	public void GetDamage()
 	{
 		health -= 1;
+		damageSound.Play();
 		if (health <= 0){
 			Destroy(this.gameObject);
 		}

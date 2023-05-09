@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float speed = 3f;//скорость движения
     [SerializeField] private int health = 5;//кол-во здоровья
     [SerializeField] private float jumpForce = 15f;//сила прыжка
+	[SerializeField] private AudioSource enemyDamageSound;//звук получения урона
 	
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
@@ -30,6 +31,7 @@ public class Enemy : MonoBehaviour
 	public void TakeDamage(int damage)
 	{
 		health -= damage;
+		enemyDamageSound.Play();
 	}
 	
 	private void OnCollisionEnter2D(Collision2D collision)

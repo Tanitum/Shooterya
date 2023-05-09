@@ -7,6 +7,7 @@ public class Gun : MonoBehaviour {
     public float offset; // параметр для корректировки поворота пушки
     public GameObject projectile; // внешний вид оружия
     public Transform shotPoint; // место вылета снаряда
+	[SerializeField] private AudioSource shotSound;// звук выстрела
 
     private float timeBtwShots; // время между выстрелами
     public float startTimeBtwShots;
@@ -21,6 +22,7 @@ public class Gun : MonoBehaviour {
         {
 			if (Input.GetMouseButton(0))
 			{
+				shotSound.Play();
 				Instantiate(projectile, shotPoint.position, transform.rotation);
 				timeBtwShots = startTimeBtwShots;
 			}
