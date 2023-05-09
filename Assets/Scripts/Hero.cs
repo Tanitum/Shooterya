@@ -5,13 +5,15 @@ using UnityEngine;
 public class Hero : MonoBehaviour
 {
     [SerializeField] private float speed = 3f;//скорость движения
-    [SerializeField] private int lives = 5;//кол-во здоровья
+    [SerializeField] private int health = 5;//кол-во здоровья
     [SerializeField] private float jumpForce = 15f;//сила прыжка
     private bool isGrounded = false;
 
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     private Animator anim;
+	
+	public static Hero Instance {get; set;}
 
     private States State
     {
@@ -24,6 +26,7 @@ public class Hero : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponentInChildren<SpriteRenderer>();
+		Instance = this;
     }
     private void FixedUpdate()
     {
@@ -61,6 +64,14 @@ public class Hero : MonoBehaviour
 
         if (!isGrounded) State = States.jump;
     }
+	
+	public void GetDamage()
+	{
+		health -= 1;
+		if (health <= 0){
+			Destroy(this.gameObject);
+		}
+	}
 }
 
 public enum States

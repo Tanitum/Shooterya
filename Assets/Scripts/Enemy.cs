@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float speed = 3f;//скорость движения
-    [SerializeField] private int lives = 5;//кол-во здоровья
+    [SerializeField] private int health = 5;//кол-во здоровья
     [SerializeField] private float jumpForce = 15f;//сила прыжка
 	
     private Rigidbody2D rb;
@@ -18,4 +18,25 @@ public class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();
         sprite = GetComponentInChildren<SpriteRenderer>();
     }
+	
+	private void Update()
+	{
+		if(health <= 0)
+		{
+			Destroy(gameObject);
+		}
+	}
+	
+	public void TakeDamage(int damage)
+	{
+		health -= damage;
+	}
+	
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject == Hero.Instance.gameObject)
+		{
+			Hero.Instance.GetDamage();
+		}
+	}
 }
