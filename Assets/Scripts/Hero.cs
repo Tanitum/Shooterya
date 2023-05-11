@@ -7,7 +7,7 @@ public class Hero : MonoBehaviour
 {
     [SerializeField] private float speed = 3f;//скорость движения
     [SerializeField] private float health = 5;//кол-во здоровья
-    [SerializeField] private float jumpForce = 15f;//сила прыжка
+    [SerializeField] private float jumpForce = 0.5f;//сила прыжка
 	[SerializeField] private AudioSource jumpSound;//звук прыжка
 	[SerializeField] private AudioSource damageSound;//звук урона
 	public Image bar;//полоска здоровья
@@ -51,6 +51,8 @@ public class Hero : MonoBehaviour
             Run();
         if (isGrounded && Input.GetButtonDown("Jump"))
             Jump();
+        if (Input.GetButton("Vertical"))
+            Fly();
     }
 
     private void Run()
@@ -66,6 +68,13 @@ public class Hero : MonoBehaviour
         rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
 		jumpSound.Play();
     }
+
+    private void Fly()
+    {
+        Vector3 dir = transform.up * Input.GetAxis("Vertical");
+        transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed* 3 * Time.deltaTime);
+    }
+
 
     private void CheckGround()
     {
