@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
-public class Projectile : MonoBehaviour
+public class Projectile : NetworkBehaviour
 {
-    
-	
 	public float speed; //скорость полета снаряда
     public float lifeTime; // время до самоуничтожения снаряда
     public float distance; // расстояние до объекта слоя Solid, на котором снаряд уничтожится
@@ -13,8 +10,12 @@ public class Projectile : MonoBehaviour
     public LayerMask whatIsSolid; // с объектами какого слоя сталкиваемся
 	private float flyTimer; // оставшееся время жизни снаряда
 
+    private NetworkObject networkObject;
+
     private void Start()
     {
+        networkObject = GetComponent<NetworkObject>();
+
         flyTimer = lifeTime;
     }
 
@@ -26,14 +27,17 @@ public class Projectile : MonoBehaviour
 			{
                 hitInfo.collider.GetComponent<Enemy>().TakeDamage(damage);
             }
+
+            networkObject.Despawn(true);
             Destroy(gameObject);
         }
 		
 		flyTimer -= Time.deltaTime;
 		if (flyTimer <= 0)
 		{
-			Destroy(gameObject);
-		}
+            networkObject.Despawn(true);
+            Destroy(gameObject);
+        }
 		
         transform.Translate(Vector2.right * speed * Time.deltaTime);
     }

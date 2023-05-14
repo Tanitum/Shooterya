@@ -1,24 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
-{   [SerializeField] private Transform player;
+{
+    [SerializeField] private Transform _player;
+
     private Vector3 pos;
 
     private void Awake()
     {
-        if (!player)
-            player = FindObjectOfType<Hero>().transform;
+        if (!_player)
+            _player = FindObjectOfType<Player>().transform;
     }
-
 
     private void Update()
     {
-        pos = player.position;
-        pos.z = -10f;
+        pos = new Vector3(_player.position.x, _player.position.y, -10f);
 
-        transform.position = Vector3.Lerp(transform.position,pos,Time.deltaTime);
-        
+        transform.position = Vector3.Lerp(transform.position, pos, Time.deltaTime);
     }
 }
