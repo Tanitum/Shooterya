@@ -10,8 +10,8 @@ public class Enemy : MonoBehaviour
 	private delegate void DeathEventHandler();
 	private event DeathEventHandler OnDeath;
 
-    [SerializeField]  private int _health;
-	private int health
+    [SerializeField]  private float _health;
+	private float health
 	{
 		get { return _health; }
 
@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-	public void TakeDamage(int damage)
+	public void TakeDamage(float damage)
 	{
 		health -= damage;
 

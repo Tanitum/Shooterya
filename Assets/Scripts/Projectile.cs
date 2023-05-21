@@ -6,7 +6,7 @@ public class Projectile : NetworkBehaviour
 	public float speed; //скорость полета снаряда
     public float lifeTime; // время до самоуничтожения снаряда
     public float distance; // расстояние до объекта слоя Solid, на котором снаряд уничтожится
-    public int damage; // урон от снаряда
+    public float damage; // урон от снаряда
     public LayerMask whatIsSolid; // с объектами какого слоя сталкиваемся
 	private float flyTimer; // оставшееся время жизни снаряда
 
