@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 289611804347837672}
   - component: {fileID: 7954629749923619801}
   m_Layer: 0
-  m_Name: missile_blue
+  m_Name: machine_gun_missile_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a95a66e9e2753847b1fabbc161f1f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 17
   lifeTime: 0.5
   distance: 0.05
-  damage: 5
+  damage: 1
   whatIsSolid:
     serializedVersion: 2
     m_Bits: 64
