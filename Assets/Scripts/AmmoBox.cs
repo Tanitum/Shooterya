@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class AmmoBox : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
+	
+	public int index = 0;
+	
+	void OnTriggerEnter2D(Collider2D obj) //«Наезд» на объект
+	{
+		if (obj.CompareTag("Player"))
+		{
+			Destroy(gameObject); //Удаление объекта с карты
+		}
+	}
 }
