@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6052122130898829545}
-  - component: {fileID: 6895171384584680405}
-  m_Layer: 0
+  - component: {fileID: 5498286336725070607}
+  m_Layer: 7
   m_Name: Collider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -32,19 +32,32 @@ Transform:
   m_Father: {fileID: 4661170497648969876}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6895171384584680405
-BoxCollider:
+--- !u!61 &5498286336725070607
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1275304330668928722}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.45}
+  m_EdgeRadius: 0
 --- !u!1 &1867574690473914644
 GameObject:
   m_ObjectHideFlags: 0
@@ -54,7 +67,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1867574690473914645}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +103,7 @@ GameObject:
   - component: {fileID: 1867574690815584642}
   - component: {fileID: 1867574690815584640}
   - component: {fileID: 1867574690815584643}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Land Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4960,7 +4973,7 @@ GameObject:
   - component: {fileID: 1867574690925796317}
   - component: {fileID: 1867574690925796315}
   - component: {fileID: 1867574690925796314}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Move Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9772,7 +9785,7 @@ GameObject:
   - component: {fileID: 1867574691085215126}
   - component: {fileID: 1867574691085215124}
   - component: {fileID: 1867574691085215127}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Launch Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14642,7 +14655,7 @@ GameObject:
   - component: {fileID: 1867574691275149442}
   - component: {fileID: 1867574691275149440}
   - component: {fileID: 1867574691275149443}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Jump Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19517,7 +19530,7 @@ GameObject:
   - component: {fileID: 5091789225316577492}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19642,7 +19655,7 @@ GameObject:
   - component: {fileID: 4661170498975578700}
   - component: {fileID: 1867574690269034413}
   - component: {fileID: 4661170498975578688}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19770,7 +19783,7 @@ GameObject:
   - component: {fileID: 1867574690048716198}
   - component: {fileID: 6096729202784843184}
   - component: {fileID: 212245444398216939}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20060,26 +20073,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4661170497648969876}
     m_Modifications:
-    - target: {fileID: 772623801964823887, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 2993989010
-      objectReference: {fileID: 0}
-    - target: {fileID: 1064491111238411538, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 536634091
-      objectReference: {fileID: 0}
-    - target: {fileID: 2037357494060746707, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 2227748042
-      objectReference: {fileID: 0}
-    - target: {fileID: 3877545994644492013, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 958924033
-      objectReference: {fileID: 0}
-    - target: {fileID: 4406102148103209442, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 2092895154
-      objectReference: {fileID: 0}
     - target: {fileID: 4420235115035541667, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
       propertyPath: m_Name
       value: weapon_holder
@@ -20087,10 +20080,6 @@ PrefabInstance:
     - target: {fileID: 4925653184840196415, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 951099334
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287642118437581582, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 3295941342
       objectReference: {fileID: 0}
     - target: {fileID: 7986802858412604868, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
       propertyPath: m_RootOrder
@@ -20136,18 +20125,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8651451127363755859, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
+    - target: {fileID: 9030013140305935435, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 1298480088
+      value: 951099334
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 1064491111238411538, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
-    - {fileID: 5287642118437581582, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
-    - {fileID: 8651451127363755859, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
-    - {fileID: 2037357494060746707, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
-    - {fileID: 4406102148103209442, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
-    - {fileID: 3877545994644492013, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
-    - {fileID: 772623801964823887, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
+    - {fileID: 9030013140305935435, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
 --- !u!4 &6050565771895139643 stripped
 Transform:

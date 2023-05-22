@@ -12,10 +12,10 @@ public class Gun : NetworkBehaviour
 
 	private SpriteRenderer sprite;
 
-    private float timeBtwShots; // оставшееся время между выстрелами
+    private NetworkVariable<float> timeBtwShots = new NetworkVariable<float>(0,  NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner); // оставшееся время между выстрелами
     public float startTimeBtwShots; // время между выстрелами
 	
-	public int currentAmmo = 15; // патроны в обойме
+	public NetworkVariable<int> currentAmmo = new NetworkVariable<int>(15, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner); // патроны в обойме
 	public int allAmmo = 30; // патроны в запасе
 	public int fullAmmo = 15; // размер обоймы
 	private float reloadTime;  // оставшееся время перезарядки
@@ -47,20 +47,22 @@ public class Gun : NetworkBehaviour
         else
             sprite.flipY = false;
 
-        if (timeBtwShots <= 0 && reloadTime <= 0)
+        if (timeBtwShots.Value <= 0 && reloadTime <= 0)
         {
-            if (Input.GetMouseButton(0) && currentAmmo > 0)
+            if (Input.GetMouseButton(0) && currentAmmo.Value > 0)
             {
                 ShootServerRpc();
+                timeBtwShots.Value = startTimeBtwShots;
+                currentAmmo.Value -= 1;
             }
         }
         else
         {
-            timeBtwShots -= Time.deltaTime;
+            timeBtwShots.Value -= Time.deltaTime;
             reloadTime -= Time.deltaTime;
         }
 
-        BulletsText.newText = currentAmmo + " / " + allAmmo; // изменение данных о патронах
+        BulletsText.newText = currentAmmo.Value + " / " + allAmmo; // изменение данных о патронах
         if (reloadTime <= 0)
         {
             if (Input.GetKeyDown(KeyCode.R) && allAmmo > 0)
@@ -82,15 +84,15 @@ public class Gun : NetworkBehaviour
 	
 	public void Reload()
 	{
-		int reason = fullAmmo - currentAmmo; // недостающее количесвтво патронов в обойме
+		int reason = fullAmmo - currentAmmo.Value; // недостающее количесвтво патронов в обойме
 		if (allAmmo >= reason)
 		{
 			allAmmo = allAmmo - reason;
-			currentAmmo = fullAmmo;
+			currentAmmo.Value = fullAmmo;
 		}
 		else
 		{
-			currentAmmo = currentAmmo + allAmmo;
+			currentAmmo.Value += allAmmo;
 			allAmmo = 0;
 		}
 		_reloadSound.Play();
@@ -107,10 +109,6 @@ public class Gun : NetworkBehaviour
         spawnedObject.GetComponent<Projectile>().parent = this;
 
         spawnedObject.GetComponent<NetworkObject>().Spawn();
-
-
-        timeBtwShots = startTimeBtwShots;
-        currentAmmo -= 1;
     }
 
     [ServerRpc(RequireOwnership = false)]

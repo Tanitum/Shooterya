@@ -99,13 +99,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a95a66e9e2753847b1fabbc161f1f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 0}
   speed: 15
   lifeTime: 0.5
   distance: 0.05
   damage: 5
   whatIsSolid:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
 --- !u!114 &289611804347837672
 MonoBehaviour:
   m_ObjectHideFlags: 0

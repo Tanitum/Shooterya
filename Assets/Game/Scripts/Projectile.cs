@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using Unity.Netcode;
 using System;
@@ -26,6 +27,7 @@ public class Projectile : NetworkBehaviour
     {
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, whatIsSolid);
         if (hitInfo.collider != null) {
+            Debug.Log(hitInfo.collider.tag);
             if(!IsOwner) return;
 
             if (hitInfo.collider.CompareTag("Enemy"))
@@ -36,7 +38,7 @@ public class Projectile : NetworkBehaviour
             if (hitInfo.collider.CompareTag("Player"))
             {
                 Debug.Log("HIT!!!!");
-                hitInfo.collider.GetComponent<PlayerHealth>().TakeDamage(Convert.ToInt32(damage));
+                hitInfo.collider.transform.GetComponentInParent<PlayerHealth>().TakeDamage(damage);
             }
 
             parent.DestroyServerRpc();

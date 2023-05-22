@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7986802858412604868}
   - component: {fileID: 3922972000177225327}
-  m_Layer: 0
+  - component: {fileID: 9030013140305935435}
+  m_Layer: 6
   m_Name: weapon_holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +49,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176bc2809144c614cbabeeb814566685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSwitch: 0
+  weaponSwitch:
+    m_InternalValue: 0
+--- !u!114 &9030013140305935435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4420235115035541667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 951099334
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1001 &1884546159970431891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -144,11 +162,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3405194383499629321, guid: 4c6c355e0e4fada4d9143c702750d116, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3405194385272101398, guid: 4c6c355e0e4fada4d9143c702750d116, type: 3}
       propertyPath: m_Name
       value: laser_blue
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3405194385272101398, guid: 4c6c355e0e4fada4d9143c702750d116, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -8025509100567841060, guid: 4c6c355e0e4fada4d9143c702750d116, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4c6c355e0e4fada4d9143c702750d116, type: 3}
 --- !u!224 &457124853465065767 stripped
 RectTransform:
@@ -160,22 +187,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3405194385272101398, guid: 4c6c355e0e4fada4d9143c702750d116, type: 3}
   m_PrefabInstance: {fileID: 1884546159970431891}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4925653184840196415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3848025710997367173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 951099334
-  AlwaysReplicateAsRoot: 0
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!114 &3556415012277571777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +213,22 @@ MonoBehaviour:
   ScaleThreshold: 0.01
   InLocalSpace: 0
   Interpolate: 1
+--- !u!114 &4925653184840196415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3848025710997367173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 951099334
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1001 &7528764377115270020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -301,29 +328,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: blaster_blue
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7772683606647203023, guid: 32af6ab1b03a3ed46811a710b76cece6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8963164458701892286, guid: 32af6ab1b03a3ed46811a710b76cece6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6151378059478243942, guid: 32af6ab1b03a3ed46811a710b76cece6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 32af6ab1b03a3ed46811a710b76cece6, type: 3}
---- !u!1 &262780808797323083 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7772683606647203023, guid: 32af6ab1b03a3ed46811a710b76cece6, type: 3}
-  m_PrefabInstance: {fileID: 7528764377115270020}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5287642118437581582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 262780808797323083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 951099334
-  AlwaysReplicateAsRoot: 0
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!224 &8826870772014075350 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1298395124731958866, guid: 32af6ab1b03a3ed46811a710b76cece6, type: 3}
@@ -424,33 +439,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3405194383499629321, guid: 32b042ad48af91048aec2b1cb7eb9932, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3405194385272101398, guid: 32b042ad48af91048aec2b1cb7eb9932, type: 3}
       propertyPath: m_Name
       value: gun_blue
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3405194385272101398, guid: 32b042ad48af91048aec2b1cb7eb9932, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -2564509626886762908, guid: 32b042ad48af91048aec2b1cb7eb9932, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 32b042ad48af91048aec2b1cb7eb9932, type: 3}
---- !u!1 &5109168700923189919 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3405194385272101398, guid: 32b042ad48af91048aec2b1cb7eb9932, type: 3}
-  m_PrefabInstance: {fileID: 7612991698605326473}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1064491111238411538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5109168700923189919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 951099334
-  AlwaysReplicateAsRoot: 0
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!224 &8491976369050933821 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2053439251862035124, guid: 32b042ad48af91048aec2b1cb7eb9932, type: 3}
@@ -551,33 +554,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3405194383499629321, guid: 3ec2befcece5cb3429dca9e6b8eb2698, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3405194385272101398, guid: 3ec2befcece5cb3429dca9e6b8eb2698, type: 3}
       propertyPath: m_Name
       value: machine_gun_blue
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3405194385272101398, guid: 3ec2befcece5cb3429dca9e6b8eb2698, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -2047460253319980176, guid: 3ec2befcece5cb3429dca9e6b8eb2698, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3ec2befcece5cb3429dca9e6b8eb2698, type: 3}
---- !u!1 &5805841578045294261 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3405194385272101398, guid: 3ec2befcece5cb3429dca9e6b8eb2698, type: 3}
-  m_PrefabInstance: {fileID: 9210934807676656803}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8651451127363755859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5805841578045294261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 951099334
-  AlwaysReplicateAsRoot: 0
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!224 &7182283152747759127 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2053439251862035124, guid: 3ec2befcece5cb3429dca9e6b8eb2698, type: 3}
