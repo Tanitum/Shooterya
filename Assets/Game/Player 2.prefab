@@ -19516,7 +19516,7 @@ GameObject:
   - component: {fileID: 5393659543316039080}
   - component: {fileID: 5091789225316577492}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player 2
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19531,7 +19531,7 @@ Transform:
   m_GameObject: {fileID: 4661170497648969879}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5409147253023012950}
@@ -19705,7 +19705,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c04069ec3616d1840bfb0c4452e91fae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8b315a4eb36df8f40ab36b6d49a7536b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -19726,7 +19726,7 @@ Animator:
   m_GameObject: {fileID: 4661170498975578702}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6e5b5f4662f713845b0c28185c4ea62c, type: 2}
+  m_Controller: {fileID: 9100000, guid: c7c8f4529ce00114fa94d81e450fa59b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -19751,8 +19751,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TransitionStateInfoList:
   - Layer: 0
-    OriginatingState: 125937960
-    DestinationState: 137525990
+    OriginatingState: -851644967
+    DestinationState: -277286510
     TransitionDuration: 0
     TriggerNameHash: 862969536
     TransitionIndex: 0
@@ -20095,6 +20095,18 @@ PrefabInstance:
     - target: {fileID: 7986802858412604868, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7986802858412604868, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.666
+      objectReference: {fileID: 0}
+    - target: {fileID: 7986802858412604868, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.666
+      objectReference: {fileID: 0}
+    - target: {fileID: 7986802858412604868, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.666
       objectReference: {fileID: 0}
     - target: {fileID: 7986802858412604868, guid: f2027b483b2884a7b8c6fff1640cca49, type: 3}
       propertyPath: m_LocalPosition.x
