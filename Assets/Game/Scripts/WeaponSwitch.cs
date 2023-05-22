@@ -26,6 +26,12 @@ public class WeaponSwitch : NetworkBehaviour
                 i++;
             }
         };
+
+        int i = 0;
+        foreach (Transform weapon in transform)
+        {
+            weapon.gameObject.SetActive(i++ == 0);
+        }
     }
 
     private void Update()
